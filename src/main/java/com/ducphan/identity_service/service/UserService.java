@@ -3,6 +3,8 @@ package com.ducphan.identity_service.service;
 import com.ducphan.identity_service.dto.request.UserCreationRequest;
 import com.ducphan.identity_service.dto.request.UserUpdateRequest;
 import com.ducphan.identity_service.entity.User;
+import com.ducphan.identity_service.exception.AppException;
+import com.ducphan.identity_service.exception.ErrorCode;
 import com.ducphan.identity_service.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +20,7 @@ public class UserService {
         User user = new User();
 
         if(userRepository.existsByUsername(request.getUsername())){
-            throw new RuntimeException("User exited the username");
+            throw new AppException(ErrorCode.USE_EXISTED);
         }
 
 
