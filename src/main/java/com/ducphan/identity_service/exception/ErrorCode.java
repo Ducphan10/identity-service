@@ -13,7 +13,8 @@ public enum ErrorCode {
     INVALID_KEY(1001, "Uncategorized error"),
     USE_EXISTED(1002, "use existed"),
     USERNAME_INVALID(1003, "Username must be at least {min} characters"),
-    INVALID_PASSWORD(1004, "Password must be at least {min} characters");
+    INVALID_PASSWORD(1004, "Password must be at least {min} characters"),
+    USE_NOT_EXISTED(1005, "Use not existed");
     private int code;
     private String message;
 }
